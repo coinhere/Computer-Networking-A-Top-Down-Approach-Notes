@@ -415,13 +415,13 @@ in the host B.
 #### g
 
 $$
-m = s \times L/R = 2.5*10^8 \times 1500*8/10^7 = 300 km
+m = s \times L/R = 2.5 \times 10^8 \cdot \frac{1500 \times 8}{10^7} = 300 km
 $$
 
 ### P7
 
 $$
-56*8/64*10^3 + 56*8/10^7 + 10^-2
+\frac{56\times 8}{64\times 10^3} + \frac{56\times 8}{10^7} + 10^{-2}
 $$
 
 ### P8
@@ -429,7 +429,7 @@ $$
 #### a
 
 $$
-10^7 / 200*10^3 = 50
+\frac{10^7 }{ 200\times 10^3 }= 50
 $$
 
 #### b
@@ -439,7 +439,76 @@ $$
 #### c
 
 $$
-C^n_120 \times 0.1^n \times 0.9^(120-n)
+\binom{120}{n} \cdot 0.1^n \cdot 0.9^{120-n}
 $$
 
 #### d
+
+$$
+1- \sum_{n=1}^{50} \binom{120}{n} \cdot (0.1)^n \cdot (0.9)^{120-n}
+$$
+
+### P9
+
+#### a
+
+$$
+\frac{10^9}{100 \times 10^3} = 10000
+$$
+
+#### b
+
+$$
+\sum_{n=N+1}^{M} \binom{M}{N} \cdot (p)^N \cdot (1-p)^{M-N}
+$$
+
+### P10
+
+$$
+\frac{1500 \times 8}{4 \times 10^6} = 3 ms
+$$
+
+Depend on the transmit rate between Route A to Route B.
+
+### 11
+
+$$
+|\frac{L}{R_1} + d_1 - \frac{L}{R_2} - d_2 |>= \frac{L}{R_{AB}}
+$$
+
+### 12
+
+$$
+\frac{h}{R} + \frac{L}{R} \\
+N \cdot \frac{h}{R} + \frac{L}{R}
+$$
+
+### 13
+
+#### a
+
+$$
+\frac{\sum_{i=0}^{N-1} \frac{i \cdot L}{R}}{N} = \frac{(N-1)L}{2R}
+$$
+
+#### b
+
+$$
+\frac{(N-1)L}{2R}
+$$
+
+### 14
+
+#### a
+
+$$
+I = \frac{La}{R} \\
+\frac{L}{R} + \frac{IL}{R(1-I)} = \frac{L}{R(1-I)} \\
+x = \frac{L}{R} \\
+$$
+
+#### b
+
+$$
+f(x) = \frac{x}{1-ax}
+$$
