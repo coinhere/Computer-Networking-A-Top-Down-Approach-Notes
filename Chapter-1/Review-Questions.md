@@ -2,12 +2,13 @@
 
 ## SECTION 1.1
 
-### R1. What is the difference between a host and an end system? List several different types of end systems. Is a Web server an end system?
+### R1
 
 No defference.  
 In page 41:
 
-> Throughout this book we will use the terms hosts and end systems interchangeably; that is, host = end system.
+> Throughout this book we will use the terms hosts and end systems interchangeably;
+> that is, host = end system.
 
 End systems:
 
@@ -19,7 +20,7 @@ End systems:
 
 Yes.
 
-### R2. Describe the protocol that might be used by two people having a telephonic conversation to initiate and end the conversation, i.e., the way that they talk
+### R2
 
 1. The Caller enter the phone number of the person he wants to talk and calls.
 2. Waiting for the call to go through. If not, check the phone number and wait a few minutes to try again.
@@ -29,19 +30,19 @@ Yes.
 6. Conversation continues until the either of the Caller or Callee says the words to end the conversation.
 7. Say "bye" to the other person and end the conversation.
 
-### R3. Why are standards important for protocols?
+### R3
 
 It the rules that govern the way hosts communicate. If the standards is not specific or vary from host to host, then communication will not be successful. Because machines are not as smart as humans.
 
 ## SECTION 1.2
 
-### R4. List four access technologies. Classify each one as home access, enterprise access, or wide-area wireless access
+### R4
 
 Home Access: DSL, Cable, FTTH, and 5G Fixed Wireless.
 Access in the Enterprise (and the Home): Ethernet and WiFi.
 Wide-Area Wireless Access: 3G and LTE 4G and 5G.
 
-### R5. Is HFC transmission rate dedicated or shared among users? Are collisions possible in a downstream HFC channel? Why or why not?
+### R5
 
 shared among users. No.
 
@@ -51,11 +52,11 @@ In page 45.
 > particular, every packet sent by the head end travels downstream on every link to every home and every
 > packet sent by a home travels on the upstream channel to the head end.
 
-### R6. What access network technologies would be most suitable for providing internet access in rural areas?
+### R6
 
 Wide-Area Wireless Access: 3G and LTE 4G and 5G.
 
-### R7. Dial-up modems and DSL both use the telephone line (a twisted-pair coppercable) as their transmission medium. Why then is DSL much faster than dial-up access?
+### R7
 
 In page 43.
 
@@ -69,7 +70,7 @@ In <https://www.switchful.com/service/internet/resource/dsl-internet-vs-dial-up>
 
 > DSL operates over the same phone lines as dial-up but uses higher frequencies to provide much faster speeds. While dial-up is limited to 56 kbps (0.056 Mbps), even the slowest DSL connections provide 3-5 Mbps—around 100 times faster. DSL also allows simultaneous use of the internet and phone service over the same line, while dial-up ties up the phone line when in use.
 
-### R8. What are some of the physical media that Ethernet can run over?
+### R8
 
 twisted-pair copper wire, coaxial cable, and fiber optic cable, also radio spectrum
 
@@ -83,7 +84,7 @@ In page 48:
 > subsection, we provide a brief overview of these and other transmission media that
 > are commonly used in the Internet.
 
-### HFC, DSL, and FTTH are all used for residential access. For each of these access technologies, provide a range of transmission rates and comment on whether the transmission rate is shared or dedicated
+### R9
 
 | Types | Downstream     | Upstream       | shared/ dedicated |
 | ----- | -------------- | -------------- | ----------------- |
@@ -125,7 +126,7 @@ In page 46:
 > fiber to a neighborhood splitter. The splitter combines a number of homes (typically less than 100) onto a single, shared optical fiber, which connects to an optical
 > line terminator (OLT) in the telco’s CO.
 
-### R10. Describe the different wireless technologies you use during the day and their characteristics. If you have a choice between multiple technologies, why do you prefer one over another?
+### R10
 
 WiFi, In page 46:
 
@@ -155,13 +156,13 @@ But if the WI-FI connection speed is too slow due to too many people connecting 
 
 ## SECTION 1.3
 
-### R11. Suppose there is exactly one packet switch between a sending host and a receiving host. The transmission rates between the sending host and the switch and between the switch and the receiving host are R1 and R2, respectively. Assuming that the switch uses store-and-forward packet switching, what is the total end-to-end delay to send a packet of length L? (Ignore queuing, propagation delay, and processing delay.)
+### R11
 
 $$
 t = L/R_{1} + L/R_{2}
 $$
 
-### R12. What advantage does a circuit-switched network have over a packet-switched network? What advantages does TDM have over FDM in a circuit-switched network?
+### R12
 
 Lower delay, and guaranteed constant rate.
 
@@ -185,35 +186,35 @@ There are two major disadvantages in using FDM −
 - The frequency bands must be separated by guard bands to avoid noise and disruption. This results in bandwidth wastage.
 - FDM uses analog signals, which are more prone to noise disruptions than digital signals. So, if there are significant nonlinearities in the transmission link, there could be crosstalk among the different signals, resulting in communication errors.
 
-### R13. Suppose users share a 2 Mbps link. Also suppose each user transmits continuously at 1 Mbps when transmitting, but each user transmits only 20 percent of the time. (See the discussion of statistical multiplexing in Section 1.3.)
+### R13
 
-#### a. When circuit switching is used, how many users can be supported?
+#### a
 
 $$
 2Mbps/1Mbps = 2
 $$
 
-#### b. For the remainder of this problem, suppose packet switching is used. Why will there be essentially no queuing delay before the link if two or fewer users transmit at the same time? Why will there be a queuing delay if three users transmit at the same time?
+#### b
 
 Since the maximum transmission for two or fewer users is 2Mbps which is equal to the link's rate, each packet can be sent in time without queuing delays.
 
-#### c. Find the probability that a given user is transmitting
+#### c
 
 0.2
 
-#### d. Suppose now there are three users. Find the probability that at any given time, all three users are transmitting simultaneously. Find the fraction of time during which the queue grows
+#### d
 
 $$
 0.2*0.2*0.2 = 0.008
 $$
 
-### R14. Why will two ISPs at the same level of the hierarchy often peer with each other? How does an IXP earn money?
+### R14
 
 Avoid paying ISP for sending traffic to each other.
 
 By charging ISPs that connect to the IXP based on the mount of traffic.
 
-### R15. Why is a content provider considered a different Internet entity today? How does a content provider connect to other ISPs? Why?
+### R15
 
 A content provider may has lots of data centers distributed around the world which are connected to each other via a private network.
 
@@ -228,3 +229,217 @@ In page 64:
 > carries traffic to/from Google servers.
 
 ## SECTION 1.4
+
+### R16
+
+- processing delay -- constant
+- queuing delay -- variable
+- transmission delay -- variable, $=L/R$
+- propagationa delay -- variable, $=d/s$
+
+### R17
+
+### R18
+
+- wireless nodal delay: $1500\times 8/2\times 10^6 + 1000/3\times 10^8=0.006003$
+- wired nodal delay: $1500\times 8/100\times 10^6 + 1000/2\times 10^8=0.000125$
+
+### R19
+
+#### a
+
+$$
+throughput=R1 = 500 kbps
+$$
+
+#### b
+
+$$
+time = 4 \times 8 \times 10^6 / 0.5 \times 10^6 = 64
+$$
+
+#### c
+
+$$
+throughput = R2 = 100 kbps\\
+time = 4 \times 8 \times 10^6 / 0.1 \times 10^6 = 320
+$$
+
+### R20
+
+1. Dividing the file to several packets, each has a header.
+2. Process the packet, forward the packet according to It header and congestion of links.3. Queuing.
+4. Transmit the packet
+
+- A packet is analogous to a car carries passengers.
+- A router is analogous to a city where the car can stop and find the way to destination.
+- A link is analogous to highway from a city to another city.
+- The packet switching is analogous to a driver has no certain route but just a destination, once he arrives a city, he ask someone the way to his destination, and when he follow the way and arrives another city, he do this again until he arrives the destination.
+
+### R21
+
+## SECTION 1.5
+
+### R22
+
+Not necessary, but a transport protocol that supply the service of multiplexing is still needed, As this is necessary to application communication.
+
+### R23
+
+- application layer -- supply the transmission protocol between application.
+- transport layer -- supply the communication between application and other services.
+- network layer -- supply the service of transport routes a datagram from the source to destination
+- data-link layer -- supply the service of transport packet from a node to another.
+- physical layer -- supply the service of transport a bit
+
+### R24
+
+So that the developer doesn't need known the detail of the bottom protocol stack, only need known the services it provided and how to use it.
+
+### R25
+
+network layer, link-layer, application layer
+
+## SECTION 1.6
+
+### R26
+
+In page 85:
+>Much of the malware out there today is self-replicating: once it infects one host,
+from that host it seeks entry into other hosts over the Internet, and from the newly
+infected hosts, it seeks entry into yet more hosts. In this manner, self-replicating mal-
+ware can spread exponentially fast
+
+### R27
+
+By infecting devices with malware, which is a malicious program running in the devices.
+It can be controlled by bad guys to launch DDOS attack by sending specified packet.
+
+### R28
+
+- Read all the packets Alice send to Bob and packets Bob send to Alice.
+- Change or drop the packets.
+- Pretend as Alice and send packets to Bob, same for Bob.
+
+# Problems
+
+### P1
+
+Using a http protocol:
+
+| addr |   method   | argument       |return value|
+| ----- | -------------- | -------------- | ----------------- |
+| /login   | post | username,password | success/reject, Cookies |
+| /query-balance   | get | | amount |
+| /withdrawl   | post | amount | success/reject |
+| /logout  |get|    | |
+
+### P2
+
+$$
+P \times L/R + (N-1) \times L/R
+$$
+
+### P3
+
+#### a
+
+circuit-switched is more appropriate. As this application transmits data at a steady rate and continue running for a relatively long period of time.
+
+#### b
+
+No
+
+### P4
+
+#### a
+
+16
+
+#### b
+
+8
+
+#### c
+
+yes
+
+### P5
+
+#### a
+
+$$
+(10 cars)/(5 cars/min) = 2 min \\
+3 \times 2 + 175/100 \times 60 = 111min
+$$
+
+#### b
+
+$$
+(8 cars)/(5 cars/min) = 1.6 min \\
+3 \times 1.6 + 175/100 \times 60 = 109.8min
+$$
+
+### P6
+
+#### a
+
+$$
+d_prop = m/s
+$$
+
+#### b
+
+$$
+d_trans = L/R
+$$
+
+#### c
+
+$$
+m/s + L/R
+$$
+
+#### d
+
+just leaving host A.
+
+#### e
+
+in the link.
+
+#### f
+
+in the host B.
+
+#### g
+
+$$
+m = s \times L/R = 2.5*10^8 \times 1500*8/10^7 = 300 km
+$$
+
+### P7
+
+$$
+56*8/64*10^3 + 56*8/10^7 + 10^-2
+$$
+
+### P8
+
+#### a
+
+$$
+10^7 / 200*10^3 = 50
+$$
+
+#### b
+
+0.1
+
+#### c
+
+$$
+C^n_120 \times 0.1^n \times 0.9^(120-n)
+$$
+
+#### d
