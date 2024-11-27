@@ -470,20 +470,20 @@ $$
 
 Depend on the transmit rate between Route A to Route B.
 
-### 11
+### P11
 
 $$
 |\frac{L}{R_1} + d_1 - \frac{L}{R_2} - d_2 |>= \frac{L}{R_{AB}}
 $$
 
-### 12
+### P12
 
 $$
 \frac{h}{R} + \frac{L}{R} \\
 N \cdot \frac{h}{R} + \frac{L}{R}
 $$
 
-### 13
+### P13
 
 #### a
 
@@ -497,7 +497,7 @@ $$
 \frac{(N-1)L}{2R}
 $$
 
-### 14
+### P14
 
 #### a
 
@@ -512,3 +512,45 @@ $$
 $$
 f(x) = \frac{x}{1-ax}
 $$
+
+### P15
+
+$$
+\mu = \frac{R}{L} = \frac{1}{x} \\
+Total Delay = \frac{x}{1-ax} = \frac{1}{\mu - a}
+$$
+
+### P16
+
+$$
+a = \frac{N}{d} = \frac{100+1}{20 \times 10^{-3} + \frac{1}{100}} =3366.67
+$$
+
+### P17
+
+No. The queuing delays are not negligible, and delays may not equal.
+$$
+d_{end-to-end} = \sum_{i=1}^{N}(d_{proc}^i+d_{trans}^i+d_{prop}^i+d_{queue}^i)
+$$
+
+### P18
+
+### P19
+
+$$
+\frac{n(n-1)}{2}
+$$
+yes
+
+### P20
+
+$$
+min(R_s, R_c, R/M)
+$$
+
+### P21
+
+$$
+R_a = min(R_s, R_c) \\
+R_b = min(R_1,...,R_i,...R_N) = (R_c + R_s)/N \\
+When\ R_a > R_b
