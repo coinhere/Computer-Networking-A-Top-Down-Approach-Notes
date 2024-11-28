@@ -554,3 +554,184 @@ $$
 R_a = min(R_s, R_c) \\
 R_b = min(R_1,...,R_i,...R_N) = (R_c + R_s)/N \\
 When\ R_a > R_b
+$$
+
+### P22
+
+$$
+(1-p)^N \\
+\frac{1}{(1-p)^N} - 1
+$$
+
+### P23
+
+#### a
+
+$$
+L/R_s
+$$
+
+#### b
+
+yes.
+
+$$
+L/R_c - L/R_s
+$$
+
+### P24
+
+Bus is fastest.
+
+$$
+\frac{1.5 \times 8 \times 10^9}{56 \times 10^3} = 214286s \\
+\frac{1.5 \times 8 \times 10^9}{100 \times 10^6} + \frac{1.5 \times 8 \times 10^9}{1 \times 10^9} + 150/60 \times 3600 = 9132s
+$$
+
+### P25
+
+#### a
+
+$$
+d_{prop} = \frac{20000}{2.5 \cdot 10^5} = 0.08 \\
+R \cdot d_{prop} = 0.4 Mbits
+$$
+
+#### b
+
+$$
+R \cdot d_{prop} = 0.4 Mbits
+$$
+
+#### c
+
+The maximum number of bits that will be in the link at any given time.
+
+#### d
+
+$$
+\frac{20000 \cdot 10^3}{0.4 \cdot 10^6} = 50m
+$$
+
+No
+
+#### e
+
+$$
+\frac{m}{R \cdot \frac{m}{s}} = \frac{s}{R}
+$$
+
+### P26
+
+#### a
+
+$$
+R \cdot d_{prop} = 0.08 Gbits
+$$
+
+#### b
+
+$$
+R \cdot d_{prop} = 0.08 Gbits > 800,000 \\
+max = 800,000
+$$
+
+#### c
+
+$$
+\frac{s}{R} = \frac{2.5 \cdot 10^8}{1 \cdot 10^9} = 0.25m
+$$
+
+### P27
+
+$$
+\frac{R_s}{R_c} \cdot 4 = 8
+$$
+
+### P28
+
+$$
+\frac{R_s}{R_c} \cdot m = 2m
+$$
+
+### P29
+
+#### a
+
+$$
+d_{prop} = \frac{3.6 \cdot 10^7}{2.4 \cdot 10^8} = 0.15s
+$$
+
+#### b
+
+$$
+R \cdot d_{prop} = 1.5 Mbits
+$$
+
+#### c
+
+$$
+60 \times 10Mbps = 600 Mbits
+$$
+
+### P30
+
+ticket
+
+### P31
+
+#### a
+
+let N = number of links
+
+$$
+\frac{L}{R} = \frac{1Mbits}{5Mbps} = 0.2s \\
+N \cdot \frac{L}{R}
+$$
+
+#### b
+
+After the first packet is fully sent.
+
+#### c
+
+$$
+\frac{L}{R} + (N-1)\frac{L/100}{R}
+$$
+
+#### d
+
+Avoid when packet lost transmit whole messages.
+
+Unfair delays to other smaller packet.
+
+#### e
+
+Need additional processing.
+
+Added more bits.
+
+### P32
+
+$$
+N \cdot (\frac{L}{R} + d_{prop}) \\
+\frac{L}{R} + (N-1)\frac{L/100}{R} + N \cdot d_{prop}
+$$
+
+Less
+
+### P33
+
+$$
+L = 80 + S \\
+n = \frac{F}{S} \\
+d = \frac{L \cdot n}{R} + 2 \cdot \frac{L}{R} = \frac{80+S}{R} \cdot (F/S + 2)
+$$
+
+when S = $\sqrt{40F}$
+
+### P34
+
+Located in Network Layer and Transport Layer.
+
+Reliable delivery is not necessary. Such as UDP for vieo and audio transmission.
