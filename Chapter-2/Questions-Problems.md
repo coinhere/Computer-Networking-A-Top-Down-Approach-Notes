@@ -270,3 +270,156 @@ UDP, on the other hand, is connectionless, and messages sent by the client to th
 # Problems
 
 ### P1
+
+#### a
+
+False, 1 for html file and 3 for images
+
+#### b
+
+True
+
+#### c
+
+False
+
+#### d
+
+False, Date is time when the response was generated.
+
+#### e
+
+False, `204 No Content`, `304 Not Modified` and HEAD requests.
+
+### P2
+
+SMS (Short Message Service) is a widely used messaging protocol that enables the exchange of text messages up to 160 characters between mobile devices. It operates over cellular networks and does not require an internet connection, making it accessible on virtually all mobile phones. However, SMS lacks advanced features such as end-to-end encryption, multimedia support, and group chat capabilities.
+
+iMessage is Apple's proprietary messaging service that allows users to send text messages, photos, videos, and more over the internet. It utilizes Apple's own protocols and infrastructure, providing end-to-end encryption for secure communication. iMessage supports features like read receipts, typing indicators, and group chats, enhancing the messaging experience for Apple device users.
+
+WeChat, developed by Tencent, is a multifaceted messaging platform that combines text messaging, voice and video calls, social media, and payment services. It employs proprietary protocols tailored to its diverse functionalities, enabling seamless integration of various services within a single application. WeChat's protocols are not publicly disclosed, and the platform operates primarily within China's internet ecosystem.
+
+WhatsApp uses the Extensible Messaging and Presence Protocol (XMPP) for real-time messaging. XMPP is an open standard application layer protocol based on TCP, utilizing XML to represent messages, statuses, and user requests. In WhatsApp's implementation, user messages are sent to WhatsApp servers, which then forward them to the target user's smartphone.
+
+The primary differences among these messaging systems lie in their underlying protocols, features, and operational models. SMS is a basic text messaging service operating over cellular networks without internet dependency, lacking advanced features like encryption and multimedia support. iMessage and WhatsApp both offer internet-based messaging with end-to-end encryption, but iMessage is exclusive to Apple devices, while WhatsApp is cross-platform. WeChat distinguishes itself by integrating a wide range of services beyond messaging, including social media and payment functionalities, and operates primarily within China's internet ecosystem. Additionally, WhatsApp's use of XMPP allows for decentralized communication, whereas iMessage and WeChat rely on centralized servers.
+
+### P3
+
+When you enter <http://yourbusiness.com/about.html> into your browser's address bar, several steps occur to display the webpage:
+
+1. DNS Resolution: The browser first resolves the domain name yourbusiness.com to an IP address using the Domain Name System (DNS). This involves sending a DNS query to a DNS server, which returns the corresponding IP address.
+
+2. TCP Connection: With the IP address obtained, the browser establishes a Transmission Control Protocol (TCP) connection to the web server on port 80, the default port for HTTP. This involves a three-way handshake:
+
+* SYN: The browser sends a synchronization request to the server.
+* SYN-ACK: The server acknowledges the request.
+* ACK: The browser acknowledges the server's response, completing the handshake.
+
+3. HTTP Request: Once the connection is established, the browser sends an HTTP GET request to the server for the resource /about.html. This request includes headers such as Host: yourbusiness.com to specify the target domain.
+
+4. Server Response: The server processes the request and responds with an HTTP response message. If the resource is found, the response includes a 200 OK status code and the HTML content of about.html. If the resource is not found, the server returns a 404 Not Found status code.
+
+5. Rendering the Page: The browser receives the HTML content and begins rendering the page. It may need to make additional HTTP requests to fetch other resources referenced in the HTML, such as images, stylesheets, or scripts. Each of these resources involves similar steps: DNS resolution, TCP connection, HTTP request, server response, and rendering.
+
+6. Closing the Connection: After all resources are loaded, the browser may close the TCP connection, or it may keep it open for reuse in future requests, depending on the HTTP version and connection settings.
+
+Throughout this process, the primary protocols used are DNS for domain name resolution, TCP for reliable data transmission, and HTTP for requesting and delivering web content. The messages exchanged include DNS queries and responses, TCP packets for connection establishment and data transfer, and HTTP request and response messages containing headers and content.
+
+### P4
+
+#### a
+
+/cs453/index.html
+
+#### b
+
+HTTP/1.1
+
+#### c
+
+Persistent
+
+Connection:keep-alive
+
+#### d
+
+The IP address of the host is not specified in the HTTP request message. To determine the IP address, one would need to perform a DNS lookup for the domain gaia.cs.umass.edu.
+
+#### e
+
+The browser initiating this message is Netscape version 7.2. The browser type is specified in the User-Agent header: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.2) Gecko/20040804 Netscape/7.2 (ax).
+
+The browser type is needed in an HTTP request message to inform the server about the client's software and capabilities. This information allows the server to tailor its response to the specific requirements and limitations of the client's browser, such as content formatting, supported features, and compatibility considerations.
+
+### P5
+
+#### a
+
+Yes.
+
+Date: Tue, 07 Mar 2008 12:39:45GMT
+
+#### b
+
+Last-Modified: Sat, 10 Dec2005 18:27:46 GMT
+
+#### c
+
+Content-Length: 3874
+
+#### d
+
+The first 5 bytes of the document are not explicitly provided in the response headers. To determine the exact content, one would need to access the document's content.
+The server agreed to a persistent connection, as indicated by the Connection: Keep-Alive header.
+
+### P6
+
+#### a
+
+Both, By include the Connection: close header
+
+#### b
+
+No encryption
+
+#### c
+
+Yes
+
+#### d
+
+Yes
+
+### P7
+
+After n queries for DNS. One $RTT_0$ for TCP Connection, One for Request and Response also 0.002 for transmission.
+
+$$
+RTT_1+...+RTT_n+RTT_0+1.002\times RTT_0
+$$
+
+### P8
+
+#### a
+
+$$
+n \times RTT + 2\times RTT + 2\times RTT \times 9
+$$
+
+#### b
+
+$$
+n \times RTT + 2\times RTT + 2\times RTT \times 2
+$$
+
+#### c
+
+With no parallel
+$$
+n \times RTT + 2\times RTT + RTT \times 9
+$$
+
+With parallel
+$$
+n \times RTT + 2\times RTT + RTT \times 2
+$$
