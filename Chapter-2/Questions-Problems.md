@@ -423,3 +423,203 @@ With parallel
 $$
 n \times RTT + 2\times RTT + RTT \times 2
 $$
+
+### P9
+
+#### a
+
+$$
+\begin{align*}
+\Delta &= 1.6Mbit/54Mbps \\
+\beta &= 24 \\
+delay &= \Delta/(1-\Delta\beta) + 3
+\end{align*}
+$$
+
+#### b
+
+$$
+\begin{align*}
+\Delta &= 1.6Mbit/54Mbps \\
+\beta &= 24\times 0.3 \\
+delay &= (\Delta/(1-\Delta\beta)+3)\times 0.3
+\end{align*}
+$$
+
+### P10
+
+$$
+\begin{align*}
+t_{initial} &=  RTT\times 2 + (100000+200*3)/300 \\
+t_{noparallel} &= t_{initial} + N \times t_{initial} \\
+t_{nopersistent} &= t_{initial} + RTT\times 2 + (100000+200*3)N/300 \\
+t_{persistent} &= t_{initial} + RTT + (100000+200)N/300 \\
+\end{align*}
+$$
+
+As the link is 30-meter, The RTT is slow, So parallel downloads via parallel instances of non-persistent HTTP make no sense.
+While the parallel downloads via parallel instances of persistent HTTP is little faster than non-persistent HTTP.
+
+### P11
+
+#### a
+
+Yes, because Bob has more connections, he can get a larger share of the link bandwidth.
+
+#### b
+
+Yes, Bob still needs to perform parallel downloads; otherwise he will get less bandwidth than the other four users.
+
+### P12
+
+```python
+from socket import *
+
+serverPort = 12000
+serverSocket = socket(AF_INET, SOCK_STREAM)
+serverSocket.bind(("", serverPort))
+serverSocket.listen(1)
+print("The server is ready to receive")
+connectionSocket, addr = serverSocket.accept()
+
+while True:
+    sentence = connectionSocket.recv(1024).decode()
+    print(sentence)
+connectionSocket.close()
+```
+
+### P13
+
+#### a
+
+5000 + 3*4 = 5012
+
+#### b
+
+4*4 = 16
+
+### P14
+
+2*4
+
+### P15
+
+Key Difference:
+
+MAIL FROM: is used by mail servers for message routing and error handling.
+From: is what the recipient sees in their email client and can be modified for display purposes.
+
+### P16
+
+SMTP uses a line containing only a period to mark the end of a message body.
+HTTP uses “Content-Length header field” to indicate the length of a message body.
+No, HTTP cannot use the method used by SMTP, because HTTP message could be binary
+data, whereas in SMTP, the message body must be in 7-bit ASCII format.
+
+### P17
+
+asusus-4b96 ([58.88.21.177])
+
+### P18
+
+#### a
+
+A WHOIS database is a publicly accessible database that contains information about registered domain names and their owners. It is maintained by domain registrars and registries and is used to store details.
+
+#### b
+
+<https://who.is/> : ns1.baidu.com ns2.baidu.com
+
+#### c
+
+```bash
+nslookup  # 进入交互模式后输入`server`查看当前的DNS服务器
+nslookup -type=A www.baidu.com
+nslookup -type=NS www.baidu.com ns1.baidu.com
+nslookup -type=MX www.baidu.com ns2.baidu.com
+```
+
+```bash
+❯ nslookup -type=NS www.baidu.com ns1.baidu.com
+Server:   ns1.baidu.com
+Address:  110.242.68.134#53
+
+Non-authoritative answer:
+www.baidu.com canonical name = www.a.shifen.com.
+
+Authoritative answers can be found from:
+a.shifen.com
+  origin = ns1.a.shifen.com
+  mail addr = baidu_dns_master.baidu.com
+  serial = 2503300020
+  refresh = 5
+  retry = 5
+  expire = 2592000
+  minimum = 3600
+```
+
+#### d
+
+```bash
+❯ nslookup www.baidu.com
+
+Server:   192.168.31.1
+Address:  192.168.31.1#53
+
+Non-authoritative answer:
+www.baidu.com canonical name = www.a.shifen.com.
+Name: www.a.shifen.com
+Address: 183.240.99.169
+Name: www.a.shifen.com
+Address: 183.240.99.58
+Name: www.a.shifen.com
+Address: 2409:8c54:870:310:0:ff:b0ed:40ac
+Name: www.a.shifen.com
+Address: 2409:8c54:870:187:0:ff:b0d9:bb1c
+```
+
+#### e
+
+according to <https://whois.arin.net/rest/customer/C10991933>:
+baidu.com: 69.30.242.152 - 69.30.242.159
+
+#### f
+
+n attacker can use the whois database and nslookup tool to determine the IP address
+ranges, DNS server addresses, etc., for the target institution.
+
+#### g
+
+To see if a address is owned by a specific organization.
+Businesses can use WHOIS to detect trademark infringement and domain squatting.
+
+### P19
+
+```bash
+❯ dig baidu.com NS
+
+; <<>> DiG 9.20.7 <<>> baidu.com NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 26206
+;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;baidu.com.     IN  NS
+
+;; ANSWER SECTION:
+baidu.com.    1 IN  NS  ns7.baidu.com.
+baidu.com.    1 IN  NS  dns.baidu.com.
+baidu.com.    1 IN  NS  ns4.baidu.com.
+baidu.com.    1 IN  NS  ns3.baidu.com.
+baidu.com.    1 IN  NS  ns2.baidu.com.
+
+;; Query time: 34 msec
+;; SERVER: 192.168.31.1#53(192.168.31.1) (UDP)
+;; WHEN: Sun Mar 30 22:45:36 CST 2025
+;; MSG SIZE  rcvd: 128
+```
+
+### P20

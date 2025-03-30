@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{graphics, amsmath, amssymb, multirow}
+\usepackage{geometry} 
+\geometry{
+  a4paper,
+  total={170mm,257mm},
+  left=20mm,
+  top=20mm,
+}
+
+\begin{document}
+
+Ramanujan's formula:
+
+$$\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^\infty\frac{(4k)! (1103+26390k)}{(k!)^4 396^{4k}} \\
+a+b=c
+$$
+
+Multiline equations:
+
+\begin{eqnarray*}
+\cos{2\theta} & = & \cos^2\theta - \sin^2\theta \\
+              & = & 2\cos^2\theta - 1 \\
+              & = & 1 - 2\sin^2\theta
+\end{eqnarray*}
+
+Pi as a continuous fraction:
+\begin{equation*}
+\pi = 3+\textstyle \cfrac{1}{7+\textstyle \cfrac{1}{15+\textstyle \cfrac{1}{1+\textstyle \cfrac{1}{292+\textstyle \cfrac{1}{1+\textstyle \cfrac{1}{1+\textstyle \cfrac{1}{1+\ddots}}}}}}}
+\end{equation*}
+
+\end{document}
